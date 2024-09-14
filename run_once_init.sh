@@ -11,7 +11,11 @@ install_arch_packages() {
   print_message "Installing packages on Arch Linux..."
   curl https://mise.run | sh
   echo "eval \"\$(/home/archuser/.local/bin/mise activate bash)\"" >>~/.bashrc
+  echo "sourcing bashrc file"
   source ~/.bashrc
+  echo "sourced bashrc file"
+  sleep 5
+  echo "mise install ..."
   mise use -g node@latest
   mise use -g python@latest
   pip install pipx
