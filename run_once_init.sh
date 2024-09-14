@@ -9,6 +9,7 @@ print_message() {
 # Function to install packages on Arch Linux
 install_arch_packages() {
   print_message "Installing packages on Arch Linux..."
+  curl https://mise.run | sh
   mise use -g node@latest
   mise use -g python@latest
   pip install pipx
@@ -17,7 +18,6 @@ install_arch_packages() {
   yay -Syu --noconfirm yaak-app snapd google-chrome-dev archivemount neovim-git tabby-bin ruby-colorls httpie-desktop-appimage
   sudo systemctl enable --now snapd.socket
   sudo ln -s /var/lib/snapd/snap /snap
-  curl https://mise.run | sh
   # getent group docker
   # sudo groupadd docker
   # sudo usermod -aG docker $USER
