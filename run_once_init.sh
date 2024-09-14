@@ -17,10 +17,10 @@ install_arch_packages() {
   cat ~/.bashrc
   sleep 5
   echo "mise install ..."
-  mise use -g node@latest
-  mise use -g python@latest
-  pip install pipx
-  pipx install posting
+  $HOME/.local/bin/mise use -g node@latest
+  $HOME/.local/bin/mise use -g python@latest
+  $HOME/.local/share/mise/installs/python/3.12.6/bin/pip install pipx
+  $HOME/.local/bin/pipx install posting
   sudo pacman -S yay
   yay -Syu --noconfirm yaak-app snapd google-chrome-dev archivemount neovim-git tabby-bin ruby-colorls httpie-desktop-appimage
   sudo systemctl enable --now snapd.socket
