@@ -1,0 +1,71 @@
+---
+- name: System initial setup
+  hosts: localhost
+  become: yes
+  gather_facts: true
+  tasks:
+    - name: Pacman packages install
+      community.general.pacman:
+        name:
+          - flatpak
+          - mpv
+          - ripgrep
+          - ffmpegthumbnailer
+          - mediainfo
+          - wezterm
+          - yazi
+          - stow
+          - zoxide
+          - atuin
+          - kitty
+          - fontforge
+          - bat
+          - fd
+          - fzf
+          - nushell
+          - vim-ansible
+          - tmux
+          - xsel
+          - httpie
+          - rye
+          - ollama
+          - glow
+          - miller
+          - ouch
+          - rsync
+          - rust-analyzer
+          - ttyper
+          - lazygit
+          - xclip
+        state: present
+      become: yes
+
+    - name: Flatpak applications Install
+      community.general.flatpak:
+        name:
+          - io.github.zen_browser.zen
+          - com.obsproject.Studio
+          - md.obsidian.Obsidian
+          - one.ablaze.floorp
+          - dev.zed.Zed
+        state: present
+      become: yes
+
+    # - name: Install snap classic packages
+    #   community.general.snap:
+    #     name:
+    #       - code
+    #     classic: true
+
+    - name: Snap packages install
+      community.general.snap:
+        name:
+          - pieces-os
+          - pieces-for-developers
+          - discord
+          - spotify
+          - notesnook
+          - brave
+          - postman
+          - telegram-desktop
+# posting
