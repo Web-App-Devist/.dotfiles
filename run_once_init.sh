@@ -20,6 +20,10 @@ install_arch_packages() {
   yay -Syu --noconfirm yaak-app snapd google-chrome-dev archivemount neovim-git tabby-bin ruby-colorls httpie-desktop-appimage
   sudo systemctl enable --now snapd.socket
   sudo ln -s /var/lib/snapd/snap /snap
+  sudo sh -c "echo -e '\n[warpdotdev]\nServer = https://releases.warp.dev/linux/pacman/\$repo/\$arch' >> /etc/pacman.conf"
+  sudo pacman-key -r "linux-maintainers@warp.dev"
+  sudo pacman-key --lsign-key "linux-maintainers@warp.dev"
+  sudo pacman -Sy warp-terminal
   # getent group docker
   # sudo groupadd docker
   # sudo usermod -aG docker $USER
