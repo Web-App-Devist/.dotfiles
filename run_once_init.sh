@@ -14,6 +14,7 @@ install_arch_packages() {
   echo "sourcing bashrc file"
   source ~/.bashrc
   echo "sourced bashrc file"
+  cat ~/.bashrc
   sleep 5
   echo "mise install ..."
   mise use -g node@latest
