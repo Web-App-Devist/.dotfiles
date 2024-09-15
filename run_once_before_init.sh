@@ -19,6 +19,7 @@ install_arch_packages() {
   sudo pacman -S yay ansible stow
   yay -Syu --noconfirm yaak-app snapd google-chrome-dev archivemount neovim-git tabby-bin ruby-colorls httpie-desktop-appimage
   sudo systemctl enable --now snapd.socket
+  sudo systemctl enable --now snapd.apparmor
   sudo ln -s /var/lib/snapd/snap /snap
   # sudo sh -c "echo -e '\n[warpdotdev]\nServer = https://releases.warp.dev/linux/pacman/\$repo/\$arch' >> /etc/pacman.conf"
   # sudo pacman-key -r "linux-maintainers@warp.dev"
