@@ -16,7 +16,7 @@ install_arch_packages() {
   $HOME/.local/bin/mise use -g python@latest
   $HOME/.local/share/mise/installs/python/3.12.6/bin/pip install pipx
   $HOME/.local/bin/pipx install posting
-  sudo pacman -S yay ansible
+  sudo pacman -S yay ansible stow
   yay -Syu --noconfirm yaak-app snapd google-chrome-dev archivemount neovim-git tabby-bin ruby-colorls httpie-desktop-appimage
   sudo systemctl enable --now snapd.socket
   sudo ln -s /var/lib/snapd/snap /snap
